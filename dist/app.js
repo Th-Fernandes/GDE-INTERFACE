@@ -1,10 +1,12 @@
 "use strict";
 const express = require('express');
-// const {Router, Request, Response} = express
+const getData = require('./backend/helpers/read');
 const app = express();
 const port = 3000;
+const dataPath = process.cwd() + "/src/backend/data/test.json";
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    const data = getData(dataPath);
+    res.json(data);
 });
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);

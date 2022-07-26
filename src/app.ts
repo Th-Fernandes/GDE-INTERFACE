@@ -1,14 +1,16 @@
-const express = require('express')
+const express = require('express');
+const getData = require('./backend/helpers/read')
 
-// const {Router, Request, Response} = express
-const app = express()
-
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.get('/', (req:any, res:any) => {
-  res.send('Hello World!')
-})
+  const dataPath = process.cwd() + "/src/backend/data/test.json";
+  const readData = getData(dataPath)
+
+  res.json(readData);
+});
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});

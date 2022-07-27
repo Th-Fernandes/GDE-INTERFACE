@@ -5,7 +5,7 @@ const router = (0, express_1.Router)();
 router.get('/', (req, res) => {
     res.json({
         status: 200,
-        path: '/'
+        path: '/register'
     });
 });
 exports.default = router;

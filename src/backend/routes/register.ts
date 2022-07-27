@@ -1,12 +1,13 @@
-import {Router} from 'express';
+import { Router } from "express";
 
 const router = Router();
 
-router.get('/', (req:any, res:any) => {
+router.get('/', (req, res) => {
   res.json({
     status: 200,
-    path: '/'
+    path: '/register'
   });
 });
+
 
 export default router;
